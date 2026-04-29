@@ -17,3 +17,6 @@ dependencies = [
 
 [project.urls]
 Repository = "https://techhub-by-efs.ghe.com/EFS/FO00047-trajectory-trace-client"
+
+[tool.hatch.build.targets.wheel]
+packages = ["trajectory_trace_client"]

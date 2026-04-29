@@ -1,5 +1,5 @@
 import yaml
-from trajectory_trace import MQTTClient
+from trajectory_trace_client import MQTTClient
 
 # Load configuration
 with open('config.yaml', 'r') as f:
@@ -19,7 +19,8 @@ data = {
         "heading": 90.0,
         "velocity_ms": 13.9,  # ~50 km/h
         "data": {
-            "source": "example"
+            "custom_int": 1,
+            "custom_char": "a"
         }
     }]
 }

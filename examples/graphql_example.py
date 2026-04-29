@@ -1,22 +1,33 @@
 import asyncio
-from trajectory_trace import GraphQLClient, basic_auth
+from trajectory_trace_client import GraphQLClient, basic_auth
 
 client = GraphQLClient(
     url="https://city.app.sdk-cloud.de/api/graphql",
     auth=basic_auth("user@example.com", "password"),
 )
 
-# --- Query: fetch sensors ---
+# --- Query: fetch traffic participants ---
 result = client.query("""
-  query {
-    sensors(source: 1) {
-      totalCount
-      nodes {
+  query entities {
+    entities(
+        source: 1
+        after: "2025-03-24T16:57:12.000Z"
+        before: "2025-03-24T16:57:15.000Z"
+    ) {
+        nodes {
         id
-        time
         knownAs
-        class { name }
-      }
+        time
+        timeEnd
+        count
+        class {
+            name
+        }
+        measurements {
+            time
+            coordinateLongLat
+        }
+        }
     }
   }
 """)
@@ -29,11 +40,18 @@ async def on_measurement(data):
 
 asyncio.run(client.subscribe("""
   subscription {
-    measurements(source: 1, intervalMs: 100) {
-      trackingId
-      lat
-      long
-      time
+    measurements(source: 1, intervalMs: 1000) {
+        trackingId
+        time
+        sensorName
+        velocityMs
+        data
+        lat
+        long
+        class {
+        id
+        name
+        }
     }
   }
 """, on_measurement))

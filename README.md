@@ -13,7 +13,7 @@ pip install git+https://techhub-by-efs.ghe.com/EFS/FO00047-trajectory-trace-clie
 ### Publish data (MQTT)
 ```python
 import yaml
-from trajectory_trace import MQTTClient
+from trajectory_trace_client import MQTTClient
 
 with open("config.yaml") as f:
     config = yaml.safe_load(f)
@@ -35,7 +35,7 @@ See `examples/config.yaml` for all configuration options and the expected data f
 
 ### Query live/historical data (GraphQL)
 ```python
-from trajectory_trace import GraphQLClient, basic_auth
+from trajectory_trace_client import GraphQLClient, basic_auth
 
 client = GraphQLClient(
     url="https://city.app.sdk-cloud.de/api/graphql",
@@ -61,7 +61,7 @@ See `examples/graphql_example.py` for a full example.
 
 ### Credentials
 ```python
-from trajectory_trace import basic_auth
+from trajectory_trace_client import basic_auth
 
 auth = basic_auth("user@example.com", "password")
 ```
