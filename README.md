@@ -6,7 +6,7 @@ Python client for [Trajectory Trace](https://city.app.sdk-cloud.de):
 
 ## Installation
 ```bash
-pip install git+https://techhub-by-efs.ghe.com/EFS/FO00047-trajectory-trace-client.git
+pip install git+https://github.com/joergsi/trajectory-trace-client.git
 ```
 
 ## Usage
