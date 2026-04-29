@@ -1,0 +1,63 @@
+
+# -----------------------------------------------------------------------------
+# PRODUCTION CONFIGURATION (WebSocket with TLS encryption)
+# -----------------------------------------------------------------------------
+# Use this for connecting to the production Disrupt/SDK platform
+HOST: "city.app.sdk-cloud.de"
+PORT: 443
+TRANSPORT: "websockets"
+TOPIC: "MQTT Ingest Topic"
+USER: "MQTT User"
+PW: "MQTT Password"
+SENSORNAME: "MQTT Sensor Name"
+
+# -----------------------------------------------------------------------------
+# ALTERNATIVE: LOCAL DEVELOPMENT CONFIGURATION (TCP, no TLS)
+# -----------------------------------------------------------------------------
+# Uncomment these lines to connect to a local MQTT broker for testing
+#
+# HOST: "localhost"
+# PORT: 1883
+# TRANSPORT: "tcp"
+# TOPIC: "MQTT Ingest Topic"
+# USER: "MQTT User"
+# PW: "MQTT Password"
+# SENSORNAME: "MQTT Sensor Name"
+
+# -----------------------------------------------------------------------------
+# CONFIGURATION PARAMETERS EXPLAINED (https://city.app.sdk-cloud.de/docs/user/guide/new_source/)
+# -----------------------------------------------------------------------------
+#
+# HOST          - MQTT broker hostname/IP address
+# PORT          - MQTT broker port (443 for WSS, 1883 for TCP, 8883 for TLS)
+# TRANSPORT     - Connection protocol: "websockets" or "tcp"
+# TOPIC         - Base topic UUID from your Disrupt platform location
+# SENSORNAME    - Sensor identifier (appended to TOPIC as: TOPIC/SENSORNAME)
+# USER          - Authentication username (UUID from platform)
+# PW            - Authentication password (from platform)
+#
+# -----------------------------------------------------------------------------
+# EXAMPLE DATA FORMAT TO PUBLISH
+# -----------------------------------------------------------------------------
+#
+# {
+#   "tracking_id": 1,                 # temp. unique ID of the tracked object
+#   "class_id": 2,                    # Object class ID (see below)
+#   "time": "2024-10-22T10:25:26+02", # ISO 8601 timestamp
+#   "long": 11.4253,                  # Longitude
+#   "lat": 48.7751                    # Latitude
+# }
+#
+# see https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.json
+#
+# Object Class IDs:
+#   -1 = Unknown
+#    0 = Pedestrian
+#    1 = Bicycle
+#    2 = Car
+#    3 = Motorcycle
+#    5 = Bus
+#    7 = Truck
+#   10 = E-scooter
+#
+# -----------------------------------------------------------------------------
