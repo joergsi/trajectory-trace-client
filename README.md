@@ -7,6 +7,15 @@ Python client for [Trajectory Trace](https://city.app.sdk-cloud.de):
 ## Installation
 ```bash
 pip install git+https://github.com/joergsi/trajectory-trace-client.git
+
+# Without git (e.g. Docker, CI)
+pip install "trajectory-trace-client @ https://github.com/joergsi/trajectory-trace-client/archive/refs/heads/main.zip"
+
+# Or pin to a specific release tag, e.g. 0.1.0
+pip install "trajectory-trace-client @ https://github.com/joergsi/trajectory-trace-client/archive/refs/tags/v0.1.0.zip"
+
+# Or add to requirements.txt
+trajectory-trace-client @ https://github.com/joergsi/trajectory-trace-client/archive/refs/tags/v0.1.0.zip"
 ```
 
 ## Usage
