@@ -34,13 +34,12 @@ client.close()
 See `examples/config.yaml` for all configuration options and the expected data format.
 
 ### Query live/historical data (GraphQL)
-
 ```python
-from trajectory_trace import GraphQLClient
+from trajectory_trace import GraphQLClient, basic_auth
 
 client = GraphQLClient(
     url="https://city.app.sdk-cloud.de/api/graphql",
-    auth="Basic <your-base64-credentials>",
+    auth=basic_auth("user@example.com", "password"),
 )
 
 # One-shot query
@@ -60,6 +59,11 @@ asyncio.run(client.subscribe(
 
 See `examples/graphql_example.py` for a full example.
 
-## Credentials
+### Credentials
+```python
+from trajectory_trace import basic_auth
 
-Generate a Basic Auth header from your username and password at https://www.debugbear.com/basic-auth-header-generator.
+auth = basic_auth("user@example.com", "password")
+```
+
+

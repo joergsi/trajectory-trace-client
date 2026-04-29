@@ -1,9 +1,9 @@
 import asyncio
-from trajectory_trace import GraphQLClient
+from trajectory_trace import GraphQLClient, basic_auth
 
 client = GraphQLClient(
     url="https://city.app.sdk-cloud.de/api/graphql",
-    auth="Basic <your-base64-credentials>",
+    auth=basic_auth("user@example.com", "password"),
 )
 
 # --- Query: fetch sensors ---
