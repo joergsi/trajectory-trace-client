@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trajectory-trace-client"
+version = "0.1.0"
+description = "Python client for publishing and querying trajectory data on the Disrupt platform"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "paho-mqtt>=1.6",
+    "gql[websockets]>=3.4",
+    "requests>=2.28",
+    "pyyaml>=6.0",
+]
+
+[project.urls]
+Repository = "https://techhub-by-efs.ghe.com/EFS/FO00047-trajectory-trace-client"

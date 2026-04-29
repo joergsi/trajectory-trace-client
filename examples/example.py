@@ -1,15 +1,5 @@
-"""
-Basic usage example for disrupt-mqtt-client.
-
-This example shows how to:
-1. Load configuration from a YAML file
-2. Create an MQTT client
-3. Publish a single message
-4. Close the connection properly
-"""
-
 import yaml
-from disrupt_mqtt import MQTTClient
+from trajectory_trace import MQTTClient
 
 # Load configuration
 with open('config.yaml', 'r') as f:
