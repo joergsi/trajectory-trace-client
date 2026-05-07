@@ -1,0 +1,12 @@
+{
+  "$schema": "https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.json",
+  "measurements": [
+    {
+      "sensing_id": 68006,
+      "time": "2026-05-07T06:33:09+00:00",
+      "sensor_class": "TrafficLightVRU",
+      "signal_id": 3,
+      "colour": "red"
+    }
+  ]
+}

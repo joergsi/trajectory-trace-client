@@ -1,0 +1,18 @@
+{
+  "$schema": "https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.json",
+  "measurements": [
+    {
+      "long": 11.49,
+      "lat": 48.81,
+      "time": "2026-01-12T10:09:53.825Z",
+      "time_end": "2026-01-12T10:10:00.125Z",
+      "event_name": "Danger of running a red light",
+      "participant_ids": [
+        6,
+        7
+      ],
+      "danger_radius_m": 4,
+      "event_class": "Warning"
+    }
+  ]
+}

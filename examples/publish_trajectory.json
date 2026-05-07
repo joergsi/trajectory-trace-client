@@ -1,0 +1,19 @@
+{
+  "$schema": "https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.json",    
+  "measurements": [
+    {
+      "tracking_id": 440053505,
+      "time": "2026-05-07T06:36:57+00:00",
+      "lat": 48.77493,
+      "long": 11.42953,
+      "class_id": 5,
+      "data": {
+        "orgid": "44-604-500053-505",
+        "heat": 70,
+        "steer": 14.45
+      },
+      "velocity_ms": 10.28,
+      "heading": 2
+    }
+  ]
+}

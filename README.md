@@ -18,8 +18,13 @@ pip install "trajectory-trace-client @ https://github.com/joergsi/trajectory-tra
 trajectory-trace-client @ https://github.com/joergsi/trajectory-trace-client/archive/refs/tags/v0.1.0.zip"
 ```
 
-## Usage
-### Publish data (MQTT)
+## Publish data (MQTT)
+### Information
+- [Documentation for publishing](https://city.app.sdk-cloud.de/docs/user/guide/new_source/)
+- [JSON Schema](https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.json)
+- [Protobuf Schema](https://city.app.sdk-cloud.de/api/schema/mqtt-measurements.proto)
+
+### Short example
 ```python
 import yaml
 from trajectory_trace_client import MQTTClient
@@ -40,18 +45,30 @@ client.publish({
 client.close()
 ```
 
-See `examples/config.yaml` for all configuration options and the expected data format.
+### Full example
+- See `examples/config.yaml` for all configuration options and the expected data format.
+- See `examples/mqtt_example.py` for a full example.
 
-### Query live/historical data (GraphQL)
+
+## Query live/historical data (GraphQL)
+### Information
+- [GraphQL Overview](https://city.app.sdk-cloud.de/docs/user/GraphQL/overview/)
+- [GraphiQL IDE](https://city.app.sdk-cloud.de/docs/user/GraphQL/ide/)
+
+### Short example
 ```python
 from trajectory_trace_client import GraphQLClient, basic_auth
 
+# Connect to client
 client = GraphQLClient(
     url="https://city.app.sdk-cloud.de/api/graphql",
     auth=basic_auth("user@example.com", "password"),
 )
 
-# One-shot query
+# Add credentials (optional), to access non public data
+auth = basic_auth("user@example.com", "password")
+
+# Query historical data
 result = client.query("query { sensors(source: 1) { totalCount } }")
 
 # Live subscription
@@ -66,13 +83,8 @@ asyncio.run(client.subscribe(
 ))
 ```
 
+### Full example
 See `examples/graphql_example.py` for a full example.
 
-### Credentials
-```python
-from trajectory_trace_client import basic_auth
-
-auth = basic_auth("user@example.com", "password")
-```
 
 

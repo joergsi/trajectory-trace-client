@@ -8,7 +8,7 @@ with open('config.yaml', 'r') as f:
 # Create MQTT client
 mqtt_client = MQTTClient(config)
 
-# Prepare data to publish (measurements format)
+# Prepare data to publish (e.g. trajectory data)
 data = {
     "measurements": [{
         "tracking_id": 1001,
@@ -24,6 +24,16 @@ data = {
         }
     }]
 }
+
+# Trajectory Class IDs:
+#   -1 = Unknown
+#    0 = Pedestrian
+#    1 = Bicycle
+#    2 = Car
+#    3 = Motorcycle
+#    5 = Bus
+#    7 = Truck
+#   10 = E-scooter
 
 # Publish the data
 print("Publishing data to MQTT broker...")
