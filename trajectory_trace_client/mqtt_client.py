@@ -17,7 +17,7 @@ class MQTTClient:
         self.client.username_pw_set(config['USER'], config['PW'])
         self.client.on_connect = self._on_connect
         self.client.on_disconnect = self._on_disconnect
-        self.client.connect(self.host, self.port, 60)
+        self.client.connect(host=self.host, port=self.port, keepalive=20)
         self.client.loop_start()
         # Wait for connection
         import time
