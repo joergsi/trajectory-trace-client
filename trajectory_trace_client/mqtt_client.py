@@ -10,7 +10,7 @@ class MQTTClient:
         self.transport = config['TRANSPORT']
         self.qos = qos
         self.connected = False
-        self.client = mqtt.Client(transport=self.transport)
+        self.client = mqtt.Client(client_id=config.get('CLIENT_ID', ''), transport=self.transport)
         if self.transport == "websockets":
             self.client.ws_set_options(path="/mqtt")
             self.client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)

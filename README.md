@@ -4,6 +4,12 @@ Python client for [Trajectory Trace](https://city.app.sdk-cloud.de):
 - Query historical data via GraphQL
 - Subscribe to live data via GraphQL
 
+Current tag:
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
 ## Installation
 ```bash
 pip install git+https://github.com/joergsi/trajectory-trace-client.git

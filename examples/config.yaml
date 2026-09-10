@@ -10,6 +10,7 @@ TOPIC: "MQTT Ingest Topic"
 USER: "MQTT User"
 PW: "MQTT Password"
 SENSORNAME: "MQTT Sensor Name"
+# CLIENT_ID: "MQTT Client ID"  # optional, random if omitted
 
 # -----------------------------------------------------------------------------
 # ALTERNATIVE: LOCAL DEVELOPMENT CONFIGURATION (TCP, no TLS)
@@ -23,6 +24,7 @@ SENSORNAME: "MQTT Sensor Name"
 # USER: "MQTT User"
 # PW: "MQTT Password"
 # SENSORNAME: "MQTT Sensor Name"
+# CLIENT_ID: "MQTT Client ID"
 
 # -----------------------------------------------------------------------------
 # CONFIGURATION PARAMETERS EXPLAINED (https://city.app.sdk-cloud.de/docs/user/guide/new_source/)
@@ -35,3 +37,4 @@ SENSORNAME: "MQTT Sensor Name"
 # SENSORNAME    - Sensor identifier (appended to TOPIC as: TOPIC/SENSORNAME)
 # USER          - Authentication username (UUID from platform)
 # PW            - Authentication password (from platform)
+# CLIENT_ID     - Optional MQTT client ID (random if omitted)
